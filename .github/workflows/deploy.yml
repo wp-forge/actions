@@ -1,0 +1,15 @@
+name: Deploy
+
+run-name: Deploy to ${{ inputs.deploy_target }} by @${{ github.actor }}
+
+on:
+  workflow_call:
+    inputs:
+      deploy_target:
+        required: true
+  
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
